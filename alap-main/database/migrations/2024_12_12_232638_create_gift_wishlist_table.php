@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('gift_wishlist', function (Blueprint $table) {
             $table->id();
             $table->foreignId('gift_id')->constrained('gifts');
-            $table->foreignId('wishlist_id')->constrained('whishlists');
+            $table->foreignId('wishlist_id')->constrained('wishlists');
             $table->timestamps();
         });
     }

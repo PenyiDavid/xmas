@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('animal_caretaker', function (Blueprint $table) {
+        Schema::create('gift_types', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('animal_id');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('animal_caretaker');
+        Schema::dropIfExists('gift_types');
     }
 };

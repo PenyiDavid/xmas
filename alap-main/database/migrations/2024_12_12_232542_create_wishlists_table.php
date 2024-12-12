@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('breeds', function (Blueprint $table) {
+        Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
-            $table->string('spieces_name');
-            $table->foreignId('spieces_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('breeds');
+        Schema::dropIfExists('wishlists');
     }
 };

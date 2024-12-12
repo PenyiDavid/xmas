@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
+            $table->string('gift_name');
+            $table->integer('price');
+            $table->foreignId('gift_type_id')->constrained('gift_types');
             $table->timestamps();
         });
     }

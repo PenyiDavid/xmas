@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('wishlists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('person_id')->constrained('people');
+            $table->string('wishlist_name');
             $table->timestamps();
         });
     }
